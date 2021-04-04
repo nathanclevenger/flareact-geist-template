@@ -1,7 +1,7 @@
 {
-  "name": "flareact-template",
+  "name": "flareact-geist-template",
   "version": "1.0.0",
-  "author": "Josh Larson <jplhomer@gmail.com>",
+  "author": "Nathan Clevenger",
   "license": "MIT",
   "main": "index.js",
   "private": true,
@@ -11,6 +11,7 @@
     "deploy": "flareact publish"
   },
   "dependencies": {
+    "@geist-ui/react": "^2.1.4",
     "flareact": "^1.0.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"

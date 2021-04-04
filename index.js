@@ -1,3 +1,4 @@
+import { logError } from './sentry'
 import { handleEvent } from "flareact";
 
 /**
@@ -15,6 +16,7 @@ addEventListener("fetch", (event) => {
       handleEvent(event, require.context("./pages/", true, /\.(js|jsx|ts|tsx)$/), DEBUG)
     );
   } catch (e) {
+    event.waitUntil(logError(e, event.request))
     if (DEBUG) {
       return event.respondWith(
         new Response(e.message || e.toString(), {

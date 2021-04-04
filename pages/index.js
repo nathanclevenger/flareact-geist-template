@@ -1,7 +1,35 @@
+import { Card, Col, Page, Row, Snippet, Spacer } from '@geist-ui/react'
+
 export default function Index() {
   return (
-    <h1>
-      You're running React on the Edge!
-    </h1>
+    <Page size="small">
+      <h1>
+        Hello, World!
+      </h1>
+      <p>You're running Geist in React on the Edge!</p>
+      <Snippet text="yarn add @geist-ui/react" width="300px" />
+      <Spacer y={2}/>
+      <Row gap={2} style={{ marginBottom: '15px' }}>
+        <Col>
+          <Card shadow>
+            <h4>An opinionated design</h4>
+            <p>for rapid app development</p>
+          </Card>
+        </Col>
+        <Col>
+          <Card shadow>
+            <h4>An opinionated design</h4>
+            <p>for rapid app development</p>
+          </Card>
+        </Col>
+        <Col>
+          <Card shadow>
+            <h4>An opinionated design</h4>
+            <p>for rapid app development</p>
+          </Card>
+        </Col>
+      </Row>
+      
+    </Page>
   );
 }
