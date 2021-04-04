@@ -8,7 +8,7 @@ import { handleEvent } from "flareact";
  * 2. we will return an error message on exception in your Response rather
  *    than the default 404.html page.
  */
-const DEBUG = false;
+const DEBUG = true;
 
 addEventListener("fetch", (event) => {
   try {
@@ -18,6 +18,7 @@ addEventListener("fetch", (event) => {
   } catch (e) {
     event.waitUntil(logError(e, event.request))
     if (DEBUG) {
+      console.log(e.message || e.toString())
       return event.respondWith(
         new Response(e.message || e.toString(), {
           status: 500,

@@ -1,22 +1,22 @@
 // Get the key from the "DSN" at: https://sentry.io/settings/<org>/projects/<project>/keys/
 // The "DSN" will be in the form: https://<SENTRY_KEY>@sentry.io/<SENTRY_PROJECT_ID>
 // eg, https://0000aaaa1111bbbb2222cccc3333dddd@sentry.io/123456
-const SENTRY_PROJECT_ID = '123456'
-const SENTRY_KEY = '0000aaaa1111bbbb2222cccc3333dddd'
+if(!SENTRY_PROJECT_ID) var SENTRY_PROJECT_ID = '123456'
+if(!SENTRY_KEY) var SENTRY_KEY = '0000aaaa1111bbbb2222cccc3333dddd'
 
 // Useful if you have multiple apps within a project – not necessary, only used in TAGS and SERVER_NAME below
-const APP = 'my-app'
+if(!APP) var APP = 'flareact-geist-template'
 
 // https://docs.sentry.io/error-reporting/configuration/?platform=javascript#environment
-const ENV = 'development'
+if(!ENV) var ENV = 'development'
 
 // https://docs.sentry.io/error-reporting/configuration/?platform=javascript#release
 // A string describing the version of the release – we just use: git rev-parse --verify HEAD
 // You can use this to associate files/source-maps: https://docs.sentry.io/cli/releases/#upload-files
-const RELEASE = '0000aaaa1111bbbb2222cccc3333dddd'
+if(!RELEASE) var RELEASE = '0000aaaa1111bbbb2222cccc3333dddd'
 
 // https://docs.sentry.io/enriching-error-data/context/?platform=javascript#tagging-events
-const TAGS = { app: APP }
+if(!TAGS) var TAGS = { app: APP }
 
 // https://docs.sentry.io/error-reporting/configuration/?platform=javascript#server-name
 const SERVER_NAME = `${APP}-${ENV}`
